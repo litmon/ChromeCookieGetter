@@ -8,6 +8,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String IP_ADDRESS = "10.0.1.2:8000";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://10.0.1.2/index.html")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://" + IP_ADDRESS + "/index.html")));
             }
         });
     }
