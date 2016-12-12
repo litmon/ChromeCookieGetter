@@ -5,6 +5,19 @@
   <title>Simple index.html</title>
 </head>
 <body>
-  <div>Hello world!</div>
+  <h2>Hello world!</h2>
+  <h3 id="cookie"></h3>
+  
+  <button id="get-cookie">get cookie</button>
+  <script>
+    window.onload = function(){
+      document.cookie = "hoge=fuga";
+      document.getElementById("cookie").textContent = document.cookie;
+
+      document.getElementById("get-cookie").onclick = function(){
+        window.location = "custom://cookie?cookie=" + escape(document.cookie);
+      }
+    }
+  </script>
 </body>
 </html>
